@@ -332,7 +332,7 @@ void printVersion()
 
 void printUsage()
 {
-    printf("Usage: qml [options] [files]\n");
+    printf("Usage: qmlscreenshot [options] [files]\n");
     printf("\n");
     printf("Any argument ending in .qml will be treated as a QML file to be loaded.\n");
     printf("Any number of QML files can be loaded. They will share the same engine.\n");
@@ -340,7 +340,15 @@ void printUsage()
     printf("'gui' application type is only available if the QtGui module is available.\n");
     printf("'widget' application type is only available if the QtWidgets module is available.\n");
     printf("\n");
-    printf("General Options:\n");
+    printf("The screen is saved right after loading the file and closed right after it.\n");
+    printf("The screenshots are saved in the output directory defined by -o.\n");
+    printf("They are put in the same relative directory structure as the input files.\n");
+    printf("If no relative directory can be found, the image is saved with the date and time as name.\n");
+    printf("\n");
+    printf("Qmlscreenshot Options:\n");
+    printf("\t-o [dir] ..................... Save the screenshots in the given directory. Default is './screenshot'.\n");
+    printf("\n");
+    printf("General Qml Options:\n");
     printf("\t-h, -help..................... Print this usage information and exit.\n");
     printf("\t-v, -version.................. Print the version information and exit.\n");
 #ifdef QT_GUI_LIB
